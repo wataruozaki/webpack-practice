@@ -1,4 +1,10 @@
+.footer {
+  background-color: #ddd; }
+
 body {
-  color: lightblue;
-}
+  color: lightblue; }
+
+.content .title {
+  font-size: 24px;
+  color: orange; }
 

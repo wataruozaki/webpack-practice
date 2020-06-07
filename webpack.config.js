@@ -11,13 +11,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css/,
+        test: /\.(css|sass|scss)/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader
           },
           {
             loader: "css-loader"
+          },
+          {
+            loader: "sass-loader"
           }
         ]
       },
@@ -28,7 +31,7 @@ module.exports = {
             loader: "file-loader",
             options: {
               esModule: false,
-              name: "images/[name].[ext"
+              name: "images/[name].[ext]"
             }
           }
         ]
@@ -61,6 +64,10 @@ module.exports = {
     new HtmlwebpackPlugin({
       template: "./src/templates/access.pug",
       filename: "access.html"
+    }),
+    new HtmlwebpackPlugin({
+      template: "./src/templates/members/taro.pug",
+      filename: "members/taro.html"
     }),
     new CleanWebpackPlugin()
   ]
