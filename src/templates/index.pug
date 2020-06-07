@@ -1,10 +1,9 @@
 extends _layout.pug
 block locals
   - var title = "hello pug"
+
 block content
   h1 Hello, pug!
   div#react-root
-  div#vue-root
-  img(src="../images/icon.png", alt="")
-  img(src="../images/original.jpg", alt="alt")
-
+  .main-image
+    img.icon(src="../images/icon.png")

@@ -10,8 +10,8 @@ html(lang="ja")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title #{title}
   body
-    include _menu.pug
-    block content
-
-  footer
-    include _footer.pug
+    .container
+      include _menu.pug
+      block content
+      .footer
+        |copyright: wataruozaki
