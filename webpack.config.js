@@ -9,7 +9,7 @@ module.exports = {
   entry: "./src/javascripts/main.js",
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "javascripts/main.js"
+    filename: "javascripts/main.js",
   },
   module: {
     rules: [
@@ -18,9 +18,9 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "ts-loader"
-          }
-        ]
+            loader: "ts-loader",
+          },
+        ],
       },
       {
         test: /\.js/,
@@ -31,28 +31,28 @@ module.exports = {
             options: {
               presets: [
                 ["@babel/preset-env", { targets: "> 0.25%, not dead" }],
-                "@babel/preset-react"
-              ]
-            }
-          }
-        ]
+                "@babel/preset-react",
+              ],
+            },
+          },
+        ],
       },
       {
         test: /\.(css|sass|scss)/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: "css-loader",
             options: {
-              sourceMap: false
-            }
+              sourceMap: false,
+            },
           },
           {
-            loader: "sass-loader"
-          }
-        ]
+            loader: "sass-loader",
+          },
+        ],
       },
       {
         test: /\.(png|jpg|jpeg)/,
@@ -62,53 +62,53 @@ module.exports = {
             options: {
               esModule: false,
               name: "images/[name].[ext]",
-              publicPath: "/"
-            }
+              publicPath: "/",
+            },
           },
           {
             loader: "image-webpack-loader",
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 65
-              }
-            }
-          }
-        ]
+                quality: 65,
+              },
+            },
+          },
+        ],
       },
 
       {
         test: /\.pug/,
         use: [
           {
-            loader: "html-loader"
+            loader: "html-loader",
           },
           {
             loader: "pug-html-loader",
             options: {
-              pretty: true
-            }
-          }
-        ]
-      }
-    ]
+              pretty: true,
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "./stylesheets/main.css"
+      filename: "./stylesheets/main.css",
     }),
     new HtmlwebpackPlugin({
       template: "./src/templates/index.pug",
-      filename: "index.html"
+      filename: "index.html",
     }),
     new HtmlwebpackPlugin({
       template: "./src/templates/access.pug",
-      filename: "access.html"
+      filename: "access.html",
     }),
     new HtmlwebpackPlugin({
       template: "./src/templates/members/taro.pug",
-      filename: "members/taro.html"
+      filename: "members/taro.html",
     }),
-    new CleanWebpackPlugin()
-  ]
+    new CleanWebpackPlugin(),
+  ],
 };
